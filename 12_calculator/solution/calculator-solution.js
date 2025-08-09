@@ -1,36 +1,24 @@
-const add = function (a, b) {
-  return a + b;
-};
 
-const subtract = function (a, b) {
-  return a - b;
-};
+let list=document.querySelector("ul")
 
-const sum = function (array) {
-  return array.reduce((total, current) => total + current, 0);
-};
-
-const multiply = function (array) {
-  return array.reduce((product, current) => product * current)
-};
-
-const power = function (a, b) {
-  return Math.pow(a, b);
-};
-
-const factorial = function (n) {
-  let product = 1;
-  for (let i = n; i > 0; i--) {
-    product *= i;
+let input=document.querySelector("input")
+let button1=document.querySelector("button")
+button1.addEventListener("click",()=>{
+  let text=input.value
+  let row=document.createElement("li")
+  let span=document.createElement("span")
+  let del=document.createElement("button")
+  list.appendChild(row)
+  row.appendChild(span)
+  row.appendChild(del)
+  span.textContent=text
+  del.textContent="delete"
+  del.onclick=()=>{
+    row.remove()
   }
-  return product;
-};
 
-module.exports = {
-  add,
-  subtract,
-  sum,
-  multiply,
-  power,
-  factorial,
-};
+
+  input.value=""
+  input.focus()
+}
+)

@@ -1,16 +1,15 @@
 const fibonacci = function(num) {
-    let obj={}
-    let present=1
-    let last=0
-    let sequenceNum=0
-    for (let i=1;i<num;i++){
-        sequenceNum=present+last
-        last=present
-        present=sequenceNum
+    if(num<0){
+        return "OOPS"
     }
-    console.log(sequenceNum)
-    return sequenceNum
+    let a={0:0,1:1}
+
+    for (let i=1;i<num;i++){
+        a[i+1]=a[i-1]+a[i]
+    }
+
+    return a[num]
 };
-fibonacci(4)
+fibonacci("15")
 // Do not edit below this line
 module.exports = fibonacci;
