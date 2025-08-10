@@ -2,9 +2,9 @@ const fibonacci = function(num) {
     if(num<0){
         return "OOPS"
     }
-    let a={0:0,1:1}
+    let a=(0,1,1)
 
-    for (let i=1;i<num;i++){
+    for (let i=2;i<num;i++){
         a[i+1]=a[i-1]+a[i]
     }
 
